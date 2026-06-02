@@ -1,3 +1,12 @@
+和标准论文的区别
+1. 没有使用 VAE
+2. 论文用的是正余弦位置编码，它是学习位置编码
+3. 正文 patchify 使用的 MLP，他用的 CNN
+4. 正文有预测噪声的协方差，它只预测噪声
+5. 它的 loss 是 MAE, 不是 MSE
+
+可以交给 codex，问问和标准论文的区别
+
 # mnist-dits
 
 Diffusion Transformers (DiTs) trained on MNIST dataset

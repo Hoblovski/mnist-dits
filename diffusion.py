@@ -10,7 +10,7 @@ variance = (1 - alphas) * (1 - alphas_cumprod_prev) / (1 - alphas_cumprod)  # de
 
 
 # 执行前向加噪
-def forward_add_noise(x, t):  # batch_x: (batch,channel,height,width), batch_t: (batch_size,)
+def forward_add_noise(x, t):  # x: (batch,channel,height,width), t: (batch,)
     eps = torch.randn_like(x)  # 为每张图片生成第t步的高斯噪音   (batch,channel,height,width)
     alpha_bar_t = alphas_cumprod[t].view(x.size(0), 1, 1, 1)
     x_t = (
